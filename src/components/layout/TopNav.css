@@ -1,0 +1,271 @@
+.topnav {
+  position: sticky;
+  top: 0;
+  height: var(--topnav-height);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 32px;
+  background: rgba(250, 247, 252, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(176, 136, 255, 0.08);
+  z-index: 50;
+}
+
+[data-theme='dark'] .topnav {
+  background: rgba(15, 6, 24, 0.9);
+}
+
+.menu-btn {
+  display: none;
+  padding: 8px;
+  color: var(--text-primary);
+}
+
+.search-bar {
+  flex: 1;
+  max-width: 480px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  border-radius: 50px;
+}
+
+.search-icon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  outline: none;
+}
+
+.search-bar input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-kbd {
+  padding: 4px 8px;
+  background: rgba(106, 53, 255, 0.08);
+  border-radius: 8px;
+  font-size: 0.7rem;
+  color: var(--violet);
+  font-family: inherit;
+}
+
+.topnav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.icon-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  background: var(--card-white);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s;
+  position: relative;
+}
+
+.icon-btn:hover {
+  color: var(--violet);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+}
+
+.notif-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 18px;
+  height: 18px;
+  background: var(--soft-pink);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px 6px 6px;
+  background: var(--card-white);
+  border-radius: 50px;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s;
+}
+
+.profile-btn:hover {
+  box-shadow: var(--shadow-card);
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--violet), var(--soft-pink));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+/* legacy avatar classes kept for compatibility */
+
+.avatar.large {
+  width: 48px;
+  height: 48px;
+  font-size: 1rem;
+}
+
+.profile-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.notif-wrapper,
+.profile-wrapper {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  min-width: 320px;
+  padding: 16px;
+  z-index: 200;
+}
+
+.notif-dropdown h4 {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.notif-item {
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 4px;
+}
+
+.notif-item:hover {
+  background: rgba(106, 53, 255, 0.05);
+}
+
+.notif-item.unread {
+  background: rgba(106, 53, 255, 0.06);
+}
+
+.notif-item strong {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 2px;
+}
+
+.notif-item p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.notif-item span {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(176, 136, 255, 0.1);
+  margin-bottom: 8px;
+}
+
+.dropdown-empty {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  padding: 12px;
+  text-align: center;
+}
+
+.profile-btn .user-avatar {
+  border-width: 2px;
+}
+
+.profile-header strong {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.profile-header p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  transition: background 0.2s;
+}
+
+.dropdown-item:hover {
+  background: rgba(106, 53, 255, 0.06);
+}
+
+.dropdown-item.danger {
+  color: var(--red);
+}
+
+@media (max-width: 1024px) {
+  .menu-btn {
+    display: flex;
+  }
+
+  .topnav {
+    padding: 0 20px;
+  }
+
+  .profile-name {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .search-kbd {
+    display: none;
+  }
+
+  .search-bar {
+    max-width: none;
+  }
+}

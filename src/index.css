@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --deep-purple: #2d0b45;
+  --violet: #6a35ff;
+  --lavender: #b088ff;
+  --soft-pink: #ff7bcb;
+  --light-rose: #ffe8f2;
+  --bg-primary: #faf7fc;
+  --bg-secondary: #fdfbff;
+  --card-white: #ffffff;
+  --glass-white: rgba(255, 255, 255, 0.72);
+  --green: #22c55e;
+  --orange: #f59e0b;
+  --red: #ef4444;
+  --blue: #3b82f6;
+  --text-primary: #1a0a2e;
+  --text-secondary: #6b5b7b;
+  --text-muted: #9b8aab;
+  --shadow-soft: 0 4px 24px rgba(106, 53, 255, 0.08);
+  --shadow-card: 0 8px 32px rgba(45, 11, 69, 0.1);
+  --shadow-float: 0 20px 60px rgba(106, 53, 255, 0.15);
+  --radius-lg: 24px;
+  --radius-md: 20px;
+  --radius-sm: 16px;
+  --sidebar-width: 280px;
+  --topnav-height: 72px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme='dark'] {
+  --bg-primary: #0f0618;
+  --bg-secondary: #1a0a2e;
+  --card-white: #1e1030;
+  --glass-white: rgba(30, 16, 48, 0.85);
+  --text-primary: #f5f0fa;
+  --text-secondary: #b088ff;
+  --text-muted: #8b7a9e;
+  --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--lavender);
+  border-radius: 10px;
+}
+
+.glass-card {
+  background: var(--glass-white);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.premium-card {
+  background: var(--card-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(176, 136, 255, 0.08);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.premium-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-float);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--violet), var(--soft-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, var(--violet), var(--soft-pink));
+  color: white;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 8px 24px rgba(106, 53, 255, 0.35);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(106, 53, 255, 0.45);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--card-white);
+  color: var(--violet);
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 2px solid rgba(106, 53, 255, 0.2);
+  transition: all var(--transition);
+}
+
+.btn-secondary:hover {
+  border-color: var(--violet);
+  background: rgba(106, 53, 255, 0.05);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-verified {
+  background: rgba(34, 197, 94, 0.12);
+  color: var(--green);
+}
+
+.badge-pending {
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--orange);
+}
+
+.badge-rejected {
+  background: rgba(239, 68, 68, 0.12);
+  color: var(--red);
+}
+
+.page-container {
+  padding: 24px 32px 40px;
+  max-width: 1600px;
+}
+
+.page-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.page-subtitle {
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
+
+@media (max-width: 1024px) {
+  .page-container {
+    padding: 20px 20px 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width: 0px;
+  }
+}

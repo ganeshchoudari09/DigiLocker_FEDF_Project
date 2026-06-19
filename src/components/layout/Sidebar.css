@@ -1,0 +1,237 @@
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background: linear-gradient(180deg, #2d0b45 0%, #1a0630 50%, #2d0b45 100%);
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sidebar-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(176, 136, 255, 0.4);
+  border-radius: 50%;
+  left: calc(var(--i) * 5%);
+  top: calc(var(--i) * 4.5%);
+  animation: float-particle 4s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.2s);
+}
+
+@keyframes float-particle {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+  50% { transform: translateY(-20px) scale(1.5); opacity: 0.8; }
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 36px;
+  position: relative;
+  z-index: 1;
+}
+
+.brand-logo {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--violet), var(--soft-pink));
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 8px 24px rgba(106, 53, 255, 0.4);
+}
+
+.brand-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.02em;
+}
+
+.brand-tagline {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.sidebar-nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  z-index: 1;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 50px;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 500;
+  font-size: 0.9rem;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-item:hover {
+  color: white;
+}
+
+.nav-item.active {
+  color: white;
+}
+
+.nav-active-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(106, 53, 255, 0.9), rgba(255, 123, 203, 0.7));
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(106, 53, 255, 0.5), 0 0 40px rgba(255, 123, 203, 0.2);
+  z-index: -1;
+}
+
+.nav-item svg {
+  flex-shrink: 0;
+}
+
+.sidebar-storage {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  margin: 20px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.storage-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 10px;
+}
+
+.storage-bar {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.storage-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--violet), var(--soft-pink));
+  border-radius: 10px;
+}
+
+.storage-text {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 8px;
+}
+
+.sidebar-upgrade {
+  background: linear-gradient(135deg, rgba(106, 53, 255, 0.3), rgba(255, 123, 203, 0.2));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.sidebar-upgrade svg {
+  color: var(--soft-pink);
+}
+
+.sidebar-upgrade strong {
+  color: white;
+  font-size: 0.9rem;
+}
+
+.sidebar-upgrade p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.75rem;
+}
+
+.upgrade-btn {
+  margin-top: 4px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, var(--violet), var(--soft-pink));
+  color: white;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: transform 0.2s;
+}
+
+.upgrade-btn:hover {
+  transform: scale(1.03);
+}
+
+.admin-link {
+  margin-top: 8px;
+  opacity: 0.7;
+  font-size: 0.85rem;
+}
+
+.sidebar-security-art {
+  text-align: center;
+  margin-top: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.security-shield {
+  font-size: 2rem;
+  margin-bottom: 4px;
+}
+
+.sidebar-security-art p {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .sidebar-overlay.open {
+    display: block;
+  }
+}
